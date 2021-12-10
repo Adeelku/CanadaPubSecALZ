@@ -22,7 +22,7 @@
 
 variables:
   # Management Groups
-  var-parentManagementGroupId: toplevel
+  var-parentManagementGroupId: rootlevel
   var-topLevelManagementGroupName: pubsec
 
   # Logging
