@@ -11,6 +11,7 @@ variables:
 
   deploymentRegion: canadacentral
   serviceConnection: spn-azure-platform-ops
+  serviceConnection_mgmt_groups: spn-azure-platform-ops-mgmt-groups
   vmImage: ubuntu-latest
   deployOperation: create  # valid options: 'create', 'what-if'
   subscriptionsPathFromRoot: 'config/subscriptions'

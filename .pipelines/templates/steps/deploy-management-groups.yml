@@ -26,7 +26,7 @@ steps:
 - task: AzureCLI@2
   displayName: ${{ parameters.description }}
   inputs:
-    azureSubscription: $(serviceConnection)
+    azureSubscription: $(serviceConnection_mgmt_groups)
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
