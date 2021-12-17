@@ -22,7 +22,7 @@
 
 variables:
   # Management Groups
-  var-parentManagementGroupId: rootlevel
+  var-parentManagementGroupId: caf-eslz
   var-topLevelManagementGroupName: pubsec
 
   # Logging
