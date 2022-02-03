@@ -56,4 +56,4 @@ stages:
               description: 'Create/Update Management Groups'
               templateFile: structure.bicep
               deployOperation: ${{ variables['deployOperation'] }}
-              workingDir: $(System.DefaultWorkingDirectory)/arm/management-groups
+              workingDir: $(System.DefaultWorkingDirectory)/management-groups
