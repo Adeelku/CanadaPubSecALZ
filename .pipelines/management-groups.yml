@@ -6,12 +6,6 @@
 # EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES 
 # OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
 # ----------------------------------------------------------------------------------
-resources:
-  repositories:
-  - repository: arm
-    type: git
-    name: azresources
-    ref: refs/heads/main
 
 trigger: 
   batch: true
@@ -52,7 +46,6 @@ stages:
         deploy:
           steps:
           - checkout: self
-          - checkout: arm
 
           - template: templates/steps/show-variables.yml
             parameters:
@@ -63,4 +56,4 @@ stages:
               description: 'Create/Update Management Groups'
               templateFile: structure.bicep
               deployOperation: ${{ variables['deployOperation'] }}
-              workingDir: $(System.DefaultWorkingDirectory)/management-groups
+              workingDir: $(System.DefaultWorkingDirectory)/arm/management-groups
