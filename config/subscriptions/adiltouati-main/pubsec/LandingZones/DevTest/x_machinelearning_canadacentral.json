@@ -4,12 +4,12 @@
   "parameters": {
     "serviceHealthAlerts": {
       "value": {
-        "resourceGroupName": "pubsec-service-health",
+        "resourceGroupName": "pubsecdemo-service-health",
         "incidentTypes": [ "Incident", "Security" ],
         "regions": [ "Global", "Canada East", "Canada Central" ],
         "receivers": {
-          "app": [ "alzcanadapubsec@microsoft.com" ],
-          "email": [ "alzcanadapubsec@microsoft.com" ],
+          "app": [ "alzcanadapubsecdemo@microsoft.com" ],
+          "email": [ "alzcanadapubsecdemo@microsoft.com" ],
           "sms": [ { "countryCode": "1", "phoneNumber": "5555555555" } ],
           "voice": [ { "countryCode": "1", "phoneNumber": "5555555555" } ]
         },
@@ -21,7 +21,7 @@
     },
     "securityCenter": {
       "value": {
-        "email": "alzcanadapubsec@microsoft.com",
+        "email": "alzcanadapubsecdemo@microsoft.com",
         "phone": "5555555555"
       }
     },
@@ -100,7 +100,7 @@
     },
     "sqldb": {
       "value": {
-        "enabled": true,
+        "enabled": false,
         "sqlAuthenticationUsername": "azadmin",
         "aadAuthenticationOnly": false,
         "aadLoginName":"DBA Security Group",
@@ -120,13 +120,13 @@
     },
     "hubNetwork": {
       "value": {
-        "virtualNetworkId": "/subscriptions/c8515022-4cc9-4ed5-a3fe-182e05d732d8/resourceGroups/pubsec-hub-networking-rg/providers/Microsoft.Network/virtualNetworks/hub-vnet",
+        "virtualNetworkId": "/subscriptions/c8515022-4cc9-4ed5-a3fe-182e05d732d8/resourceGroups/pubsecdemo-hub-networking-rg/providers/Microsoft.Network/virtualNetworks/hub-vnet",
         "rfc1918IPRange": "10.18.0.0/22",
         "rfc6598IPRange": "100.60.0.0/16",
         "egressVirtualApplianceIp": "10.18.1.4",
         "privateDnsManagedByHub": true,
         "privateDnsManagedByHubSubscriptionId": "c8515022-4cc9-4ed5-a3fe-182e05d732d8",
-        "privateDnsManagedByHubResourceGroupName": "pubsec-dns-rg"
+        "privateDnsManagedByHubResourceGroupName": "pubsecdemo-dns-rg"
       }
     },
     "network": {
