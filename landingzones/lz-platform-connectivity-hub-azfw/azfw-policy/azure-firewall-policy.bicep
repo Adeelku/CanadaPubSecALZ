@@ -907,6 +907,7 @@ resource policy 'Microsoft.Network/firewallPolicies@2021-02-01' = {
               ruleType: 'ApplicationRule'
               name: 'AzDo FQDNs'
               targetFqdns: [
+                '*'
                 '*.dev.azure.com'
                 '*.vsassets.io'
                 '*gallerycdn.vsassets.io'
