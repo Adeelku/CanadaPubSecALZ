@@ -889,7 +889,7 @@ resource policy 'Microsoft.Network/firewallPolicies@2021-02-01' = {
   // Azure DevOps  and agent Collection
   resource AzDoCollectionGroup 'ruleCollectionGroups@2021-02-01' = {
     dependsOn: [
-      windowsCollectionGroup
+      redhatCollectionGroup
     ]
     name: 'AzDo'
     properties: {
