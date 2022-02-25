@@ -886,6 +886,84 @@ resource policy 'Microsoft.Network/firewallPolicies@2021-02-01' = {
     }
   }  
 
+  // Azure DevOps  and agent Collection
+  resource AzDoCollectionGroup 'ruleCollectionGroups@2021-02-01' = {
+    dependsOn: [
+      windowsCollectionGroup
+    ]
+    name: 'AzDo'
+    properties: {
+      priority: 1300
+      ruleCollections: [
+        {
+          ruleCollectionType: 'FirewallPolicyFilterRuleCollection'
+          name: 'AzDo FQDNs'
+          action: {
+            type: 'Allow'
+          }
+          priority: 100
+          rules: [
+            {
+              ruleType: 'ApplicationRule'
+              name: 'AzDo FQDNs'
+              targetFqdns: [
+                '*.dev.azure.com'
+                '*.vsassets.io'
+                '*gallerycdn.vsassets.io'
+                '*vstmrblob.vsassets.io'
+                'aadcdn.msauth.net'
+                'aadcdn.msftauth.net'
+                'aex.dev.azure.com'
+                'aexprodea1.vsaex.visualstudio.com'
+                'amcdn.msftauth.net'
+                'amp.azure.net'
+                'app.vssps.dev.azure.com'
+                'app.vssps.visualstudio.com'
+                '*.vsblob.visualstudio.com'
+                '*.vssps.visualstudio.com'
+                '*.vstmr.visualstudio.com'
+                'azure.microsoft.com'
+                'azurecomcdn.azureedge.net'
+                'cdn.vsassets.io'
+                'dev.azure.com'
+                'go.microsoft.com'
+                'graph.microsoft.com'
+                'live.com'
+                'login.live.com'
+                'login.microsoftonline.com'
+                'management.azure.com'
+                'management.core.windows.net'
+                'microsoft.com'
+                'microsoftonline.com'
+                'static2.sharepointonline.com'
+                'visualstudio.com'
+                'vsrm.dev.azure.com'
+                'vstsagentpackage.azureedge.net'
+                'windows.net'
+                'login.microsoftonline.com'
+                'app.vssps.visualstudio.com' 
+                'adiltouati.visualstudio.com'
+                'adiltouati.vsrm.visualstudio.com'
+                'adiltouati.vstmr.visualstudio.com'
+                'adiltouati.pkgs.visualstudio.com'
+                'adiltouati.vssps.visualstudio.com'
+              ]
+              protocols: [
+                {
+                  port: 443
+                  protocolType: 'Https'
+                }
+              ]
+              sourceAddresses: [
+                '*'
+              ]
+            }
+          ]
+        }
+      ]        
+    }
+  }  
+
   // RedHat / Priority: 2000
   resource redhatCollectionGroup 'ruleCollectionGroups@2021-02-01' = {
     dependsOn: [
